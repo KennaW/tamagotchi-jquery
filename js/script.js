@@ -3,7 +3,7 @@ $(document).ready(function() {
     var newName = $("input#name").val();
 
     var newPet = {name: newName,
-    food: 10
+    food: 100
     };
     var myVar=setInterval(function(){myTimer()},1000);
     var foodLevel;
