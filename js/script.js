@@ -1,6 +1,4 @@
 $(document).ready(function() {
-  var pets = [];
-
   $("form#hatch-form").submit(function(event) {
     var newName = $("input#name").val();
 
@@ -20,7 +18,7 @@ $(document).ready(function() {
         if (newPet.food === 0) {
           $("li." + newPet.name).addClass("dead");
           $("#deathList").append("<li> &#9760" + newPet.name + "</li>");
-          $("#cemetary").show();
+          $("#cemetary").slideDown(500);
         }
     }
 
