@@ -8,14 +8,27 @@ $(document).ready(function() {
     food: 100
     };
     var myVar=setInterval(function(){myTimer()},1000);
+    var foodLevel;
+
 
     function myTimer() {
-        $("#petList").innerHTML = newPet.food -= 1;
+        newPet.food -= 1;
         $("#" + newPet.name).text(newPet.food);
+        if (newPet.food < 25) {
+          $(".med." + newPet.name).show();
+        }
     }
 
-    $("#petList").append("<li>" + newPet.name + " energy level: " + "<span id='" + newPet.name + "'></span>" + "</li>");
+    $("#petList").append("<li><span class='glyphicon glyphicon-plus clickable med " + newPet.name + "'></span><span class='glyphicon glyphicon-cutlery clickable feed" + newPet.name + "'></span> " + newPet.name + " energy level: " + "<span id='" + newPet.name + "'></span> " + "</li>");
 
+    $(".feed" + newPet.name).click(function() {
+      newPet.food += 25;
+      if (newPet.food > 25) {
+        $(".med." + newPet.name).hide();
+      }
+    });
+
+    $("input#name").val("");
     event.preventDefault();
   });
 

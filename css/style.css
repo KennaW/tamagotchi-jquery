@@ -1,0 +1,19 @@
+ul {
+  list-style-type: none;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.glyphicon-plus {
+  color: red;
+}
+
+.glyphicon-cutlery {
+  color: grey;
+}
+
+.med {
+  display: none;
+}
