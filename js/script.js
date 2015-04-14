@@ -17,9 +17,12 @@ $(document).ready(function() {
         if (newPet.food < 25) {
           $(".med." + newPet.name).show();
         }
+        if (newPet.food < 0) {
+          $("li." + newPet.name).addClass("dead");
+        }
     }
 
-    $("#petList").append("<li><span class='glyphicon glyphicon-plus clickable med " + newPet.name + "'></span><span class='glyphicon glyphicon-cutlery clickable feed" + newPet.name + "'></span> " + newPet.name + " energy level: " + "<span id='" + newPet.name + "'></span> " + "</li>");
+    $("#petList").append("<li class='" + newPet.name + "'><span class='glyphicon glyphicon-plus clickable med " + newPet.name + "'></span><span class='glyphicon glyphicon-cutlery clickable feed" + newPet.name + "'></span> " + newPet.name + " energy level: " + "<span id='" + newPet.name + "'></span> " + "</li>");
 
     $(".feed" + newPet.name).click(function() {
       newPet.food += 25;

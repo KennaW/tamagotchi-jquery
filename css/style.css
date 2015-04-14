@@ -6,6 +6,10 @@ ul {
   cursor: pointer;
 }
 
+.dead {
+  display: none;
+}
+
 .glyphicon-plus {
   color: red;
 }
